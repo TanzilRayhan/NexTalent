@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
-
 import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
-import app from "../firebase/firebase.config"
+import app from "../Firebase/Firebase.config"
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);

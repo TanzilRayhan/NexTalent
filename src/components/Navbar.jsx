@@ -1,17 +1,28 @@
 /* eslint-disable no-unused-vars */
 import { Link, NavLink } from "react-router-dom";
-
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut();
+  };
 
   const navLinks = (
     <>
       <li><NavLink className="font-bold text-slate-500" to="/">Home</NavLink></li>
-      <li><NavLink className="font-bold text-slate-500" to="/about">About Us</NavLink></li>
+      <li><NavLink className="font-bold text-slate-500" to="/addJob">AddJob</NavLink></li>
+      <li><NavLink className="font-bold text-slate-500" to="/postedJobs">My posted jobs</NavLink></li>
+      <li><NavLink className="font-bold text-slate-500" to="/bids">My Bids</NavLink></li>
+      <li><NavLink className="font-bold text-slate-500" to="/bidRequests">Bid
+        Requests</NavLink></li>
+      <li><NavLink className="font-bold text-slate-500" to="/about">About</NavLink></li>
+      <li><NavLink className="font-bold text-slate-500" to="/login">Login</NavLink></li>
     </>
   )
 
   return (
-    <div className="max-w-7xl  mx-auto">
+    <div className="max-w-7xl mx-auto">
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown z-50">
@@ -31,6 +42,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="flex justify-center">
+            <button className="btn">Login</button>
             <div className="dropdown z-50 dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
@@ -39,8 +51,16 @@ const Navbar = () => {
               </label>
 
               <ul tabIndex={0} className="flex items-center justify-center dropdown-content mt-3 z-[1] rounded-box">
-               
-               
+                {user ? (
+                  <button onClick={handleSignOut} className="w-40 p-3 rounded-md glass bg-slate-400 font-bold ">
+                    Sign Out
+                  </button>
+                ) : (
+
+                  <Link to="/login">
+                    <button className="w-40 p-3 rounded-md glass bg-slate-400 font-bold ">Login</button>
+                  </Link>
+                )}
               </ul>
 
             </div>

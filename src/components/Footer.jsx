@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <div className=" bg-sky-950 text-white ">
-      <footer className="max-w-7xl mx-auto footer py-6">
+    <div className=" themeColor text-white ">
+      <footer className="max-w-7xl px-10 lg:px-0 mx-auto footer py-6">
         <aside>
           <a className=" normal-case font-bold text-4xl">NexTalent</a>
           <p>Copyright © 2023 - All right reserved by NexTalent Ltd</p>
@@ -11,7 +11,6 @@ const Footer = () => {
             <a className="link link-hover">About us</a>
             <a className="link link-hover">Contact</a>
             <a className="link link-hover">Address</a>
-    
         </nav>
         <nav>
           <header className="footer-title">Legal</header>
