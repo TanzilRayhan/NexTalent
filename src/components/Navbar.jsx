@@ -6,8 +6,6 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li><NavLink className="font-bold text-slate-500" to="/">Home</NavLink></li>
-      <li><NavLink className="font-bold text-slate-500" to="/allProducts">All Products</NavLink></li>
-      <li><NavLink className="font-bold text-slate-500" to="/addProducts">Add Products</NavLink></li>
       <li><NavLink className="font-bold text-slate-500" to="/about">About Us</NavLink></li>
     </>
   )
@@ -24,7 +22,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn bg-white normal-case font-bold text-4xl">NexTalent</a>
+          <a className=" normal-case font-bold text-4xl">NexTalent</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -33,14 +31,6 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="flex justify-center">
-            <select className="w-16 lg:w-20 rounded-lg text-slate-500 text-center" data-choose-theme>
-              <option disabled value="">
-                Pick a theme
-              </option>
-              <option value="">Dark</option>
-              <option value="light">Light</option>
-            </select>
-      
             <div className="dropdown z-50 dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
