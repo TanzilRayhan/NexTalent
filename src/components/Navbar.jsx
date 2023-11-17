@@ -17,7 +17,6 @@ const Navbar = () => {
       <li><NavLink className="font-bold text-slate-500" to="/bidRequests">Bid
         Requests</NavLink></li>
       <li><NavLink className="font-bold text-slate-500" to="/about">About</NavLink></li>
-      <li><NavLink className="font-bold text-slate-500" to="/login">Login</NavLink></li>
     </>
   )
 
@@ -41,30 +40,31 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="flex justify-center">
-            <button className="btn">Login</button>
-            <div className="dropdown z-50 dropdown-end">
+          {
+            user?.email ? <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://i.ibb.co/7N6yJY6/User.png" />
+                  <img src={user.photoURL} alt={user.displayName} />
                 </div>
               </label>
+              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li>
+                  <button className="btn btn-sm  btn-ghost">{user.displayName}</button>
 
-              <ul tabIndex={0} className="flex items-center justify-center dropdown-content mt-3 z-[1] rounded-box">
-                {user ? (
-                  <button onClick={handleSignOut} className="w-40 p-3 rounded-md glass bg-slate-400 font-bold ">
-                    Sign Out
-                  </button>
-                ) : (
+                </li>
+                <li>
+                  <button className="btn btn-sm  btn-ghost"
+                    onClick={logOut}
+                  >Logout</button>
 
-                  <Link to="/login">
-                    <button className="w-40 p-3 rounded-md glass bg-slate-400 font-bold ">Login</button>
-                  </Link>
-                )}
+                </li>
               </ul>
-
             </div>
-          </div>
+              :
+              <Link to='/login'>
+                <button className="btn btn-md themeColor btn-ghost">Login</button>
+              </Link>
+          }
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const Register = () => {
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, handleUpdateProfile } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -16,9 +16,10 @@ const Register = () => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
+    const image = form.get("image");
     const email = form.get("email");
     const password = form.get("password");
-    console.log(name, email, password);
+    console.log(name, image, email, password);
 
     if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
       setError("Minimum six characters, at least one letter and one number");
@@ -31,10 +32,14 @@ const Register = () => {
     }
 
     
-    createUser(email, password,)
+    createUser( email, password,)
     .then((result) => {
-      console.log(result.user);
-      navigate(location?.state ? location.state : "/");
+      handleUpdateProfile(name, image)
+      .then(() => {
+        console.log(result.user);
+          navigate(location?.state ? location.state : "/");
+      })
+     
     })
     .catch((error) => {
       console.error(error);
@@ -60,7 +65,13 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text text-xl font-bold text-white">Full Name</span>
                 </label>
-                <input type="name" name="name" placeholder="Enter name" className="input input-bordered" required />
+                <input type="text" name="name" placeholder="Enter name" className="input input-bordered" required />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-xl font-bold text-white">Profile Picture</span>
+                </label>
+                <input type="text" name="image" placeholder="Enter image url" className="input input-bordered" required />
               </div>
               <div className="form-control">
                 <label className="label">
