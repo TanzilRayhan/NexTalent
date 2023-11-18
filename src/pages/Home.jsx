@@ -5,6 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import JobCard from "./JobCard";
 import { useState } from "react";
+import Mission from "../components/Mission";
 
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
         if (category === "Web Development") {
             setJobs(JobData.filter(job => job.category === "Web Development"));
         } else if (category === "Digital Marketing") {
-            setJobs(JobData.filter(job => job.category === "Digital Marketing "));
+            setJobs(JobData.filter(job => job.category === "Digital Marketing"));
         } else if (category === "Graphic Design") {
             setJobs(JobData.filter(job => job.category === "Graphic Design"));
         } else {
@@ -54,8 +55,8 @@ const Home = () => {
                     {loadJobs()}
                     </TabPanel>
                 </div>
-
             </Tabs>
+            
         </div>
     );
 };

@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div className=" themeColor text-white ">
-      <footer className="max-w-7xl px-10 lg:px-0 mx-auto footer py-6">
+      <footer className="max-w-7xl px-10 lg:px-0 mx-auto footer py-10">
         <aside>
           <a className=" normal-case font-bold text-4xl">NexTalent</a>
           <p>Copyright © 2023 - All right reserved by NexTalent Ltd</p>

@@ -55,13 +55,13 @@ const AddJob = () => {
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="lg:flex-col ">
                     <div className="text-center text-white">
-                        <h1 className="text-5xl py-3 font-bold">Add Job</h1>
+                        <h1 className="text-2xl lg:text-5xl py-3 font-bold">Add Job</h1>
 
                     </div>
                     <div className="w-full p-10 rounded-xl shadow-2xl themeColor mb-10">
                         <form onSubmit={handleAddJob}>
                             <div className="lg:flex gap-5">
-                                <div className="form-control">
+                                <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text text-xl font-bold text-white">Email</span>
                                     </label>
