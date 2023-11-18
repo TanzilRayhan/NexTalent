@@ -39,18 +39,19 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end  py-5">
           {
             user?.email ? <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <label tabIndex={0} className=" btn  btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <img src={user.photoURL} alt={user.displayName} />
+                 
                 </div>
+                <h1 className="">{user.displayName}</h1>
               </label>
-              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2  shadow-xl bg-base-100 rounded-box w-52">
                 <li>
-                  <button className="btn btn-sm  btn-ghost">{user.displayName}</button>
-
+                  <button className="btn btn-sm normal-case btn-ghost">{user.email}</button>
                 </li>
                 <li>
                   <button className="btn btn-sm  btn-ghost"
