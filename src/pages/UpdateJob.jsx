@@ -6,34 +6,34 @@ import { Helmet } from 'react-helmet-async';
 
 const UpdateJob = () => {
 
-    const product = useLoaderData();
-    const { _id, name, brandName, type, price, rating, image, description } = product;
+    const job = useLoaderData();
+    const { _id, email, jobTitle, category, deadline, minPrice, maxPrice, description} = job;
 
 
-    const handleUpdateProduct = e => {
+    const handleUpdateJob = e => {
         e.preventDefault();
 
         const form = e.target;
 
-        const name = form.name.value;
-        const brandName = form.brandName.value;
-        const type = form.type.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const image = form.image.value;
+        const email = form.email.value;
+        const jobTitle = form.jobTitle.value;
+        const category = form.category.value;
+        const deadline = form.deadline.value;
+        const minPrice = form.minPrice.value;
+        const maxPrice = form.maxPrice.value;
         const description = form.description.value;
 
 
-       const updatedProducts = { name, brandName, type, price, rating, image, description};
-        console.log(updatedProducts);
+        const updatedJobs = { email, jobTitle, category, deadline, minPrice, maxPrice, description};
+        console.log(updatedJobs);
 
         //send data to the server
-        fetch(`/${_id}`, {
+        fetch(`http://localhost:5000/jobs/${_id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(updatedProducts),
+            body: JSON.stringify(updatedJobs),
         })
             .then((res) => res.json())
             .then((data) => {
@@ -41,7 +41,7 @@ const UpdateJob = () => {
                 if(data.modifiedCount > 0){
                     Swal.fire({
                         title:"Congrats!!!",
-                        text:"Product updated successfully!!!",
+                        text:"Job updated successfully!!!",
                         icon: "success",
                         confirmButtonText: "Ok"
                     })
@@ -62,11 +62,11 @@ const UpdateJob = () => {
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="lg:flex-col ">
                     <div className="text-center text-white">
-                        <h1 className="text-5xl py-3 font-bold">Update Car: {name}</h1>
+                        <h1 className="text-5xl py-3 font-bold">Update Job: {jobTitle}</h1>
 
                     </div>
                     <div className="w-full p-10 rounded-xl shadow-2xl themeColor mb-10">
-                    <form onSubmit={handleUpdateProduct}>
+                    <form onSubmit={handleUpdateJob}>
                             <div className="lg:flex gap-5">
                                 <div className="form-control">
                                     <label className="label">

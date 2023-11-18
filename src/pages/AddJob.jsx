@@ -3,30 +3,30 @@ import { Helmet } from 'react-helmet-async';
 
 const AddJob = () => {
 
-    const handleAddProduct = e => {
+    const handleAddJob = e => {
         e.preventDefault();
 
         const form = e.target;
 
-        const name = form.name.value;
-        const brandName = form.brandName.value;
-        const type = form.type.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const image = form.image.value;
+        const email = form.email.value;
+        const jobTitle = form.jobTitle.value;
+        const category = form.category.value;
+        const deadline = form.deadline.value;
+        const minPrice = form.minPrice.value;
+        const maxPrice = form.maxPrice.value;
         const description = form.description.value;
 
 
-        const newProducts = { name, brandName, type, price, rating, image, description };
-        console.log(newProducts);
+        const newJobs = { email, jobTitle, category, deadline, minPrice, maxPrice, description};
+        console.log(newJobs);
 
         //send data to the server
-        fetch("", {
+        fetch("http://localhost:5000/jobs", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newProducts),
+            body: JSON.stringify(newJobs),
         })
             .then((res) => res.json())
             .then((data) => {
@@ -34,7 +34,7 @@ const AddJob = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: "Congrats!!!",
-                        text: "Product added successfully !!!",
+                        text: "Job added successfully !!!",
                         icon: "success",
                         confirmButtonText: "Ok"
                     })
@@ -59,7 +59,7 @@ const AddJob = () => {
 
                     </div>
                     <div className="w-full p-10 rounded-xl shadow-2xl themeColor mb-10">
-                        <form onSubmit={handleAddProduct}>
+                        <form onSubmit={handleAddJob}>
                             <div className="lg:flex gap-5">
                                 <div className="form-control">
                                     <label className="label">
