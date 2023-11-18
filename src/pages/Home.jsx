@@ -6,6 +6,7 @@ import 'react-tabs/style/react-tabs.css';
 import JobCard from "./JobCard";
 import { useState } from "react";
 import Mission from "../components/Mission";
+import Faq from "../components/Faq";
 
 
 const Home = () => {
@@ -57,6 +58,7 @@ const Home = () => {
                 </div>
             </Tabs>
             <Mission></Mission>
+            <Faq></Faq>
         </div>
     );
 };
