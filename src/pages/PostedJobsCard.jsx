@@ -43,7 +43,7 @@ const PostedJobsCard = ({ job, jobs, setProducts }) => {
 
     return (
         <div>
-            <div className="card card-side flex flex-col lg:flex-row  bg-slate-300 shadow-xl">
+            <div className="card card-side flex flex-col lg:flex-row  bg-slate-200 shadow-xl">
                 <div className="flex flex-col lg:flex-row justify-center py-10 items-center ml-10">
                     <div>
                         <h2 className="card-title text-3xl font-bold">{jobTitle}</h2>

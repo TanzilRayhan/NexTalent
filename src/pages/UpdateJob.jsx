@@ -72,7 +72,7 @@ const UpdateJob = () => {
                                     <label className="label">
                                         <span className="label-text text-xl font-bold text-white">Email</span>
                                     </label>
-                                    <input type="email" name="email" defaultValue={email} placeholder="Enter email" className="input input-bordered text-slate-800" required disabled/>
+                                    <input type="email" name="email" defaultValue={email} placeholder="Enter email" className="input input-bordered text-slate-800" required readOnly/>
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">

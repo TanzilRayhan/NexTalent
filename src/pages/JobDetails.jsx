@@ -1,9 +1,13 @@
 import { useLoaderData } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 //import { Link } from "react-router-dom";
 
 const JobDetails = () => {
   const job = useLoaderData();
-  const { jobTitle, category, deadline, minPrice, maxPrice, description } = job;
+  const {user} = useContext(AuthContext);
+  const { jobTitle, email, category, deadline, minPrice, maxPrice, description } = job;
+  
   return (
     <div className="max-w-4xl my-10 mx-auto">
       <div className="card flex flex-col bg-slate-200 shadow-xl">
@@ -14,7 +18,7 @@ const JobDetails = () => {
               <div className="badge badge-secondary font-extrabold">
                 {category}
               </div>
-              <div className=" badge badge-primary">{deadline}</div>
+              <div className=" badge badge-primary">Deadline: {deadline}</div>
             </div>
 
             <div className="flex  justify-center items-center py-2 gap-2">
@@ -42,7 +46,9 @@ const JobDetails = () => {
                     name="email"
                     placeholder="Enter email"
                     className="input input-bordered text-slate-600"
+                    defaultValue={user.email}
                     required
+                    readOnly
                   />
                 </div>
                 <div className="form-control w-full">
@@ -57,6 +63,8 @@ const JobDetails = () => {
                     placeholder="Enter email"
                     className="input input-bordered text-slate-600"
                     required
+                    defaultValue={email}
+                    readOnly
                   />
                 </div>
               </div>

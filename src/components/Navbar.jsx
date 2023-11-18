@@ -12,7 +12,7 @@ const Navbar = () => {
     <>
       <li><NavLink className="font-bold text-slate-500" to="/">Home</NavLink></li>
       <li><NavLink className="font-bold text-slate-500" to="/addJob">AddJob</NavLink></li>
-      <li><NavLink className="font-bold text-slate-500" to="/postedJobs">My posted jobs</NavLink></li>
+      <li><NavLink className="font-bold text-slate-500" to="/postedJobs/:email">My posted jobs</NavLink></li>
       <li><NavLink className="font-bold text-slate-500" to="/bids">My Bids</NavLink></li>
       <li><NavLink className="font-bold text-slate-500" to="/bidRequests">Bid
         Requests</NavLink></li>
