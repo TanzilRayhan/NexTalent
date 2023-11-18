@@ -47,8 +47,6 @@ const Login = () => {
       });
   };
 
-
-
   return (
     <div>
         <Helmet>
