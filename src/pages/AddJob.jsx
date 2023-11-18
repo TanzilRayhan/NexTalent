@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-
+import { Helmet } from 'react-helmet-async';
 
 const AddJob = () => {
 
@@ -17,7 +17,7 @@ const AddJob = () => {
         const description = form.description.value;
 
 
-        const newProducts = { name, brandName, type, price, rating, image, description};
+        const newProducts = { name, brandName, type, price, rating, image, description };
         console.log(newProducts);
 
         //send data to the server
@@ -31,10 +31,10 @@ const AddJob = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                if(data.insertedId){
+                if (data.insertedId) {
                     Swal.fire({
-                        title:"Congrats!!!",
-                        text:"Product added successfully !!!",
+                        title: "Congrats!!!",
+                        text: "Product added successfully !!!",
                         icon: "success",
                         confirmButtonText: "Ok"
                     })
@@ -44,7 +44,10 @@ const AddJob = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen spaceGrotesk"
+            <Helmet>
+                <title>Add Job | NexTalent</title>
+            </Helmet>
+            <div className="hero min-h-screen "
                 style={{
                     backgroundImage:
                         "url(https://i.ibb.co/QnrjSwr/istockphoto-1349094945-1024x1024.jpg)",

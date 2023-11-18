@@ -17,6 +17,7 @@ import AddJob from "./pages/AddJob";
 import PostedJobs from "./pages/PostedJobs";
 import BidRequests from "./pages/BidRequests";
 import UpdateJob from "./pages/UpdateJob";
+import { HelmetProvider } from 'react-helmet-async';
 
 
 const router = createBrowserRouter([
@@ -69,8 +70,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-       <AuthProvider>
+    <HelmetProvider>
+    <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );

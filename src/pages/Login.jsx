@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -50,7 +51,10 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen spaceGrotesk"
+        <Helmet>
+                <title>Login | NexTalent</title>
+            </Helmet>
+      <div className="hero min-h-screen"
         style={{
           backgroundImage:
             "url(https://i.ibb.co/hd7Qgyf/man-search-hiring-job-online-from-laptop-1150-52728.jpg)",

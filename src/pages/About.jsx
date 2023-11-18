@@ -1,8 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
     return (
         <div>
+            <Helmet>
+                <title>About | NexTalent</title>
+            </Helmet>
             <h1 className="text-5xl text-slate-500 py-10 font-bold text-center">About Us - NexTalent</h1>
             <div className="max-w-3xl text-slate-500 text-center lg:text-left my-5 font-semibold mx-5 lg:mx-auto">
                 Welcome to NexTalent, where we redefine the online marketplace experience. At NexTalent, our mission is to connect skilled individuals with opportunities, creating a dynamic platform that empowers both talent seekers and talented professionals.

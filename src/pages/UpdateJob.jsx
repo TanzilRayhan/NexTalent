@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import Swal from "sweetalert2";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 
 const UpdateJob = () => {
@@ -50,7 +51,10 @@ const UpdateJob = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen spaceGrotesk"
+             <Helmet>
+                <title>Update Job | NexTalent</title>
+            </Helmet>
+            <div className="hero min-h-screen"
                 style={{
                     backgroundImage:
                     "url(https://i.ibb.co/QnrjSwr/istockphoto-1349094945-1024x1024.jpg)",
