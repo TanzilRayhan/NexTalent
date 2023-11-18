@@ -16,6 +16,7 @@ import MyBids from "./pages/MyBids";
 import AddJob from "./pages/AddJob";
 import PostedJobs from "./pages/PostedJobs";
 import BidRequests from "./pages/BidRequests";
+import JobDetails from "./pages/JobDetails";
 import UpdateJob from "./pages/UpdateJob";
 import { HelmetProvider } from 'react-helmet-async';
 
@@ -64,6 +65,11 @@ const router = createBrowserRouter([
       {
         path: "/bids",
         element: <PrivateRoute><MyBids></MyBids></PrivateRoute>,
+      },
+      {
+        path: "/jobDetails/:id",
+        element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
       },
     ]
     

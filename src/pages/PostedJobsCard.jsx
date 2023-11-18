@@ -63,9 +63,9 @@ const PostedJobsCard = ({ job, jobs, setProducts }) => {
                     <div className="card-actions px-4 justify-end">
                         <div className="btn-group lg:btn-group-vertical pt-5 lg:space-y-3">
                             <Link to={`/updateJobs/${_id}`}>
-                                <button className="btn btn-neutral rounded-t-xl">Update</button>
+                                <button className="btn btn-neutral rounded-lg w-full">UPDATE</button>
                             </Link>
-                            <button onClick={() => handleDelete(_id)} className="btn btn-error ">DELETE</button>
+                            <button onClick={() => handleDelete(_id)} className="btn btn-error w-full">DELETE</button>
                         </div>
                     </div>
                 </div>
