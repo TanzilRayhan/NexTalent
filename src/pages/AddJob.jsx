@@ -108,7 +108,7 @@ const AddJob = () => {
                                 <label className="label">
                                     <span className="label-text text-xl font-bold text-white">Description</span>
                                 </label>
-                                <input type="text" name="description" placeholder="Enter job description" className="input input-bordered w-full h-16 text-slate-600" required />
+                                <input type="text" name="description" placeholder="Enter job description" className="input input-bordered w-full h-16 text-slate-600" required autoComplete="off" />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover font-bold text-white pt-2">Forgot password?</a>
                                 </label>

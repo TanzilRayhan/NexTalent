@@ -12,6 +12,24 @@ const Home = () => {
     const JobData = useLoaderData();
     const [jobs, setJobs] = useState(JobData);
 
+    const filterJobsByCategory = (category) => {
+        if (category === "Web Development") {
+            setJobs(JobData.filter(job => job.category === "Web Development"));
+        } else if (category === "Digital Marketing") {
+            setJobs(JobData.filter(job => job.category === "Digital Marketing "));
+        } else if (category === "Graphic Design") {
+            setJobs(JobData.filter(job => job.category === "Graphic Design"));
+        } else {
+            setJobs(JobData);
+        }
+    };
+
+    const loadJobs = () => {
+        return jobs.map((job) => (
+            <JobCard key={job._id} job={job}></JobCard>
+        ));
+    };
+
     return (
         <div>
             <Helmet>
@@ -21,31 +39,19 @@ const Home = () => {
             <h1 className="text-center mt-10 py-5 text-5xl font-bold">Browse By Category</h1>
             <Tabs >
                 <TabList className="flex pt-2 justify-center items-center themeColor">
-                    <Tab>Web Development</Tab>
-                    <Tab>Digital Marketing</Tab>
-                    <Tab>Graphic Design</Tab>
+                    <Tab onClick={() => filterJobsByCategory("Web Development")}>Web Development</Tab>
+                    <Tab onClick={() => filterJobsByCategory("Digital Marketing")}>Digital Marketing</Tab>
+                    <Tab onClick={() => filterJobsByCategory("Graphic Design")}>Graphic Design</Tab>
                 </TabList>
                 <div className="max-w-7xl py-10 mx-auto">
                     <TabPanel>
-                        <div className="grid mx-5 lg:mx-0 grid-cols-1 gap-5">
-                            {JobData.map((job) => (
-                                <JobCard key={job._id} job={job} jobs={jobs} setJobs={setJobs}></JobCard>
-                            ))}
-                        </div>
+                    {loadJobs()}
                     </TabPanel>
                     <TabPanel>
-                        <div className="grid mx-5 lg:mx-0 grid-cols-1 gap-5">
-                            {JobData.map((job) => (
-                                <JobCard key={job._id} job={job} jobs={jobs} setJobs={setJobs}></JobCard>
-                            ))}
-                        </div>
+                    {loadJobs()}
                     </TabPanel>
                     <TabPanel >
-                        <div className="grid mx-5 lg:mx-0 grid-cols-1 gap-5">
-                            {JobData.map((job) => (
-                                <JobCard key={job._id} job={job} jobs={jobs} setJobs={setJobs}></JobCard>
-                            ))}
-                        </div>
+                    {loadJobs()}
                     </TabPanel>
                 </div>
 
