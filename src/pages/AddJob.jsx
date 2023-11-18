@@ -81,7 +81,7 @@ const AddJob = () => {
                                     </label>
                                     <input type="text" name="category" placeholder="Enter Category" className="input input-bordered text-slate-600" required />
                                 </div>
-                                <div className="form-control">
+                                <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text text-xl font-bold text-white">Deadline</span>
                                     </label>
