@@ -11,6 +11,11 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AuthProvider from "./provider/AuthProvider";
+import PrivateRoute from "./privateroute/PrivateRoute";
+import MyBids from "./pages/MyBids";
+import AddJob from "./pages/AddJob";
+import PostedJobs from "./pages/PostedJobs";
+import BidRequests from "./pages/BidRequests";
 
 
 const router = createBrowserRouter([
@@ -34,6 +39,22 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/addJob",
+        element: <PrivateRoute><AddJob></AddJob></PrivateRoute>,
+      },
+      {
+        path: "/postedJobs",
+        element: <PrivateRoute><PostedJobs></PostedJobs></PrivateRoute>,
+      },
+      {
+        path: "/bidRequests",
+        element: <PrivateRoute><BidRequests></BidRequests></PrivateRoute>,
+      },
+      {
+        path: "/bids",
+        element: <PrivateRoute><MyBids></MyBids></PrivateRoute>,
       },
     ]
     

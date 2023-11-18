@@ -69,7 +69,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-xl font-bold text-white">Profile Picture</span>
+                  <span className="label-text text-xl font-bold text-white">Photo URL</span>
                 </label>
                 <input type="text" name="image" placeholder="Enter image url" className="input input-bordered" required />
               </div>
