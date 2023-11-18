@@ -56,7 +56,7 @@ const Home = () => {
                     </TabPanel>
                 </div>
             </Tabs>
-            
+            <Mission></Mission>
         </div>
     );
 };
