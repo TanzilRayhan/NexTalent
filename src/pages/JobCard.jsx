@@ -9,9 +9,9 @@ const JobCard = ({ job }) => {
       <div className="card my-5 bg-base-100 shadow-xl">
         <div className="card-body">
           <div>
-            <h2 className="card-title text-4xl font-bold">{jobTitle}</h2>
+            <h2 className="card-title text-2xl lg:text-4xl font-bold">{jobTitle}</h2>
 
-            <div className="flex flex-col items-center lg:flex-row py-2 gap-2">
+            <div className="flex flex-col lg:items-center lg:flex-row py-2 gap-2">
               <div className="badge p-4 badge-lg badge-info">
                 DeadLine: {deadline}
               </div>

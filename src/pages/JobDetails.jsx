@@ -7,6 +7,8 @@ const JobDetails = () => {
   const job = useLoaderData();
   const {user} = useContext(AuthContext);
   const { jobTitle, email, category, deadline, minPrice, maxPrice, description } = job;
+
+  const isBidDisabled = user.email === email;
   
   return (
     <div className="max-w-4xl my-10 mx-auto">
@@ -14,15 +16,15 @@ const JobDetails = () => {
         <div className="flex flex-col text-center p-10 ">
           <div>
             <h2 className="card-title  justify-center items-center text-3xl font-bold">{jobTitle}</h2>
-            <div className="flex  justify-center items-center pt-2 gap-2">
-              <div className="badge badge-secondary font-extrabold">
+            <div className="flex flex-col lg:flex-row justify-center items-center pt-2 gap-2">
+              <div className="badge badge-secondary font-extrabold p-4">
                 {category}
               </div>
-              <div className=" badge badge-primary">Deadline: {deadline}</div>
+              <div className=" badge badge-primary p-4">Deadline: {deadline}</div>
             </div>
 
             <div className="flex  justify-center items-center py-2 gap-2">
-              <div className="badge badge-lg badge-primary badge-outline font-extrabold">
+              <div className="badge badge-lg badge-primary badge-outline font-extrabold p-4">
                 Price: ${minPrice}-${maxPrice}
               </div>
             </div>
@@ -99,7 +101,7 @@ const JobDetails = () => {
                 </div>
               </div>
               <div className="form-control mt-10">
-                <button className="btn btn-primary bg-[#0a183b]">
+                <button className="btn btn-primary bg-[#0a183b]" disabled={isBidDisabled}>
                 Bid on the project
                 </button>
               </div>

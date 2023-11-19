@@ -38,7 +38,7 @@ const Home = () => {
                 <title>Home | NexTalent</title>
             </Helmet>
             <Banner></Banner>
-            <h1 className="text-center mt-10 py-5 text-5xl font-bold">Browse By Category</h1>
+            <h1 className="text-center mt-10 py-5 text-3xl lg:text-5xl font-bold">Browse By Category</h1>
             <Tabs >
                 <TabList className="flex pt-2 justify-center items-center themeColor">
                     <Tab onClick={() => filterJobsByCategory("")}>All Jobs</Tab>
