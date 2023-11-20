@@ -32,7 +32,6 @@ const PostedJobsCard = ({ job, jobs, setProducts }) => {
                                 icon: "success",
                                 confirmButtonText: "Ok"
                             })
-                            
                             const remaining = jobs.filter(job => job._id !== _id);
                             setProducts(remaining);
                         }
@@ -47,13 +46,13 @@ const PostedJobsCard = ({ job, jobs, setProducts }) => {
                 <div className="flex flex-col lg:flex-row justify-center py-10 items-center ml-10">
                     <div>
                         <h2 className="card-title text-3xl font-bold">{jobTitle}</h2>
-                        <div className="flex pt-2 gap-2">
-                            <div className="badge badge-secondary font-extrabold">{category}</div>
-                            <div className="badge badge-primary">{deadline}</div>
+                        <div className="flex flex-col lg:flex-row pt-2 gap-2">
+                            <div className="badge badge-secondary font-extrabold p-4">{category}</div>
+                            <div className="badge badge-primary p-4">Deadline: {deadline}</div>
                         </div>
 
                         <div className="flex py-2 gap-2">
-                            <div className="badge badge-lg badge-primary badge-outline font-extrabold">Price: ${minPrice}-${maxPrice}</div>
+                            <div className="badge badge-lg badge-primary badge-outline font-extrabold p-4">Price: ${minPrice}-${maxPrice}</div>
                         </div>
 
                         <p className="mr-20 font-semibold text-lg">{description}</p>

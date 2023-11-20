@@ -21,7 +21,7 @@ const PostedJobs = () => {
                 <title>My Posted Jobs | NexTalent</title>
             </Helmet>
             <div className="max-w-5xl mx-auto mb-10">
-                <h1 className="text-2xl lg:text-5xl font-extrabold text-slate-500 text-center py-5">My Total Posted Jobs: {jobs.length}</h1>
+                <h1 className="text-2xl lg:text-5xl font-extrabold text-slate-500 text-center py-5">My Posted Jobs: {jobs.length}</h1>
                 <h1 className="text-2xl lg:text-3xl font-extrabold text-slate-500 text-center pb-5">Email: {user.email}</h1>
                 <div className="grid grid-cols-1 px-5 gap-4">
                     {jobs.map(job => (
