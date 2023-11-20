@@ -25,11 +25,12 @@ const JobDetails = () => {
 
     const form = e.target;
     const price = form.price.value;
+    const bidder_email = form.bidder_email.value;
     const bid = {
-      job: _id,
       jobTitle,
-      bidder_email: user.email,
-      email,
+      job_id: _id,
+      bidder_email,
+      jobOwner_email: email,
       deadline,
       price,
     }
@@ -98,7 +99,7 @@ const JobDetails = () => {
                   </label>
                   <input
                     type="email"
-                    name="email"
+                    name="bidder_email"
                     placeholder="Enter email"
                     className="input input-bordered text-slate-600"
                     defaultValue={user?.email}
@@ -135,6 +136,7 @@ const JobDetails = () => {
                     name="price"
                     placeholder="Enter Bidding Amount"
                     className="input input-bordered text-slate-600"
+                    autoComplete="off"
                     required
                   />
                 </div>

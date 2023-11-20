@@ -1,7 +1,10 @@
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AddJob = () => {
+  const { user } = useContext(AuthContext);
   const handleAddJob = (e) => {
     e.preventDefault();
 
@@ -79,7 +82,9 @@ const AddJob = () => {
                     name="email"
                     placeholder="Enter email"
                     className="input input-bordered text-slate-600"
+                    defaultValue={user?.email}
                     required
+                    readOnly
                   />
                 </div>
                 <div className="form-control">
