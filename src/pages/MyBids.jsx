@@ -3,17 +3,20 @@ import { Helmet } from 'react-helmet-async';
 import { AuthContext } from '../provider/AuthProvider';
 import BidsRow from './BidsRow';
 import Swal from 'sweetalert2';
+import { useLoaderData } from 'react-router-dom';
 
 const MyBids = () => {
     const { user } = useContext(AuthContext);
     const [bids, setBids] = useState([]);
+    const totalBids = useLoaderData();
 
-    const url = `http://localhost:5000/bids?bidder_email=${user?.email}`;
     useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setBids(data))
+        // Filter bids that match the user's email
+        const bidRequest = totalBids.filter(bid => bid.bidder_email === user.email);
+        setBids(bidRequest);
     }, []);
+
+
 
     const handleDeleteBid = id => {
         console.log(id);
@@ -36,7 +39,7 @@ const MyBids = () => {
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!!!",
-                                text: "Job deleted successfully!!!",
+                                text: "Bid deleted successfully!!!",
                                 icon: "success",
                                 confirmButtonText: "Ok"
                             })
@@ -46,6 +49,29 @@ const MyBids = () => {
                     });
             }
         })
+    }
+
+    const handleComplete = id => {
+        fetch(`http://localhost:5000/bids/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({status: 'complete'})
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if(data.modifiedCount > 0){
+                    //update
+                    const remaining = bids.filter(bid => bid._id !== id);
+                    const updated = bids.find(bid => bid._id === id);
+                    updated.status = 'complete'
+                    const newBids = [updated, ...remaining]
+                    setBids(newBids);
+                }
+            })
+            
     }
 
     return (
@@ -60,7 +86,7 @@ const MyBids = () => {
                     <table className="table w-full">
                         <tbody>
                             {
-                                bids.map(bid => <BidsRow key={bid._id} bid={bid} handleDeleteBid={handleDeleteBid}></BidsRow>)
+                                bids.map(bid => <BidsRow key={bid._id} bid={bid} handleDeleteBid={handleDeleteBid} handleComplete={handleComplete}></BidsRow>)
                             }
                         </tbody>
                     </table>

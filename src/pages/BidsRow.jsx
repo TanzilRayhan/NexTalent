@@ -1,6 +1,6 @@
 
-const BidsRow = ({ bid, handleDeleteBid }) => {
-    const {_id, jobTitle, jobOwner_email, deadline } = bid || {};
+const BidsRow = ({ bid, handleDeleteBid,  handleComplete }) => {
+    const {_id, jobTitle, jobOwner_email, deadline, status} = bid || {};
 
     return (
         <div>
@@ -24,10 +24,13 @@ const BidsRow = ({ bid, handleDeleteBid }) => {
                     {deadline}
                 </td>
                 <td>
-                    <button className="btn btn-primary btn-xs">pending</button>
+                   
                 </td>
                 <th>
-                    <button className="btn btn-ghost btn-xs">Complete</button>
+                    {
+                        status === 'complete' ?  <button  className="btn btn-primary btn-xs">Completed</button> : <span><button  className="btn btn-primary btn-xs">pending</button><button onClick={()=> handleComplete(_id)} className="btn btn-ghost btn-xs">Complete</button></span> 
+                    }
+                   
                 </th>
             </tr>
         </div>
