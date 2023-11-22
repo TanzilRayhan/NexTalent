@@ -28,7 +28,7 @@ const UpdateJob = () => {
         console.log(updatedJobs);
 
         //send data to the server
-        fetch(`http://localhost:5000/jobs/${_id}`, {
+        fetch(`https://nex-talent-server.vercel.app/jobs/${_id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'

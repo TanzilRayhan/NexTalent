@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/jobs")
+        loader: () => fetch("https://nex-talent-server.vercel.app/jobs")
       },
       {
         path: "/about",
@@ -51,27 +51,27 @@ const router = createBrowserRouter([
       {
         path: "/updateJobs/:id",
         element: <PrivateRoute><UpdateJob></UpdateJob></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
+        loader: ({params}) => fetch(`https://nex-talent-server.vercel.app/jobs/${params.id}`)
       },
       {
         path: "/postedJobs/:email",
         element: <PrivateRoute><PostedJobs></PostedJobs></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/jobs?email=${params.email}`)
+        loader: ({params}) => fetch(`https://nex-talent-server.vercel.app/jobs?email=${params.email}`)
       },
       {
         path: "/jobDetails/:id",
         element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
+        loader: ({params}) => fetch(`https://nex-talent-server.vercel.app/jobs/${params.id}`)
       },
       {
         path: "/bids",
         element: <PrivateRoute><MyBids></MyBids></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/bids')
+        loader: () => fetch('https://nex-talent-server.vercel.app/bids')
       },
       {
         path: "/bidRequests",
         element: <PrivateRoute><BidRequests></BidRequests></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/bids')
+        loader: () => fetch('https://nex-talent-server.vercel.app/bids')
       }
     ]
     

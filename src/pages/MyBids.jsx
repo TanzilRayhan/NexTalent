@@ -30,7 +30,7 @@ const MyBids = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/bids/${id}`, {
+                fetch(`https://nex-talent-server.vercel.app/bids/${id}`, {
                     method: "DELETE"
                 })
                     .then((res) => res.json())
@@ -52,7 +52,7 @@ const MyBids = () => {
     }
 
     const handleComplete = id => {
-        fetch(`http://localhost:5000/bids/${id}`, {
+        fetch(`https://nex-talent-server.vercel.app/bids/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

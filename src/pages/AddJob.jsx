@@ -30,7 +30,7 @@ const AddJob = () => {
     console.log(newJobs);
 
     //send data to the server
-    fetch("http://localhost:5000/jobs", {
+    fetch("https://nex-talent-server.vercel.app/jobs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
