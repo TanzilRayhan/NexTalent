@@ -12,7 +12,6 @@ const BidRequests = () => {
     const totalBids = useLoaderData();
 
     useEffect(() => {
-        // Filter jobs that match the user's email
         const bidRequest = totalBids.filter(bid => bid.bidder_email !== user.email);
         setBids(bidRequest);
     }, []);
