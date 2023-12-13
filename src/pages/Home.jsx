@@ -35,12 +35,12 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Home | NexTalent</title>
+                <title>NexTalent | Home</title>
             </Helmet>
             <Banner></Banner>
             <h1 className="text-center mt-10 py-5 text-3xl lg:text-5xl font-bold">Browse By Category</h1>
             <Tabs >
-                <TabList className="flex pt-2 justify-center items-center themeColor">
+                <TabList className="flex text-black pt-2 justify-center items-center themeColor">
                     <Tab onClick={() => filterJobsByCategory("")}>All Jobs</Tab>
                     <Tab onClick={() => filterJobsByCategory("Web Development")}>Web Development</Tab>
                     <Tab onClick={() => filterJobsByCategory("Digital Marketing")}>Digital Marketing</Tab>

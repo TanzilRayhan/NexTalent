@@ -45,7 +45,7 @@ const PostedJobsCard = ({ job, jobs, setProducts }) => {
             <div className="card card-side flex flex-col lg:flex-row  bg-slate-200 shadow-xl">
                 <div className="flex flex-col lg:flex-row justify-center py-10 items-center ml-10">
                     <div>
-                        <h2 className="card-title text-3xl font-bold">{jobTitle}</h2>
+                        <h2 className="card-title text-black text-3xl font-bold">{jobTitle}</h2>
                         <div className="flex flex-col lg:flex-row pt-2 gap-2">
                             <div className="badge badge-secondary font-extrabold p-4">{category}</div>
                             <div className="badge badge-primary p-4">Deadline: {deadline}</div>
@@ -55,7 +55,7 @@ const PostedJobsCard = ({ job, jobs, setProducts }) => {
                             <div className="badge badge-lg badge-primary badge-outline font-extrabold p-4">Price: ${minPrice}-${maxPrice}</div>
                         </div>
 
-                        <p className="mr-20 font-semibold text-lg">{description}</p>
+                        <p className="mr-20 text-black font-semibold text-lg">{description}</p>
                     </div>
 
 

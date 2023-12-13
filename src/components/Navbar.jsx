@@ -10,13 +10,13 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <li><NavLink className="font-bold text-slate-500" to="/">Home</NavLink></li>
-      <li><NavLink className="font-bold text-slate-500" to="/addJob">AddJob</NavLink></li>
-      <li><NavLink className="font-bold text-slate-500" to="/postedJobs/:email">My posted jobs</NavLink></li>
-      <li><NavLink className="font-bold text-slate-500" to="/bids">My Bids</NavLink></li>
-      <li><NavLink className="font-bold text-slate-500" to="/bidRequests">Bid
+      <li><NavLink className="font-bold " to="/">Home</NavLink></li>
+      <li><NavLink className="font-bold " to="/addJob">AddJob</NavLink></li>
+      <li><NavLink className="font-bold " to="/postedJobs/:email">My posted jobs</NavLink></li>
+      <li><NavLink className="font-bold " to="/bids">My Bids</NavLink></li>
+      <li><NavLink className="font-bold " to="/bidRequests">Bid
         Requests</NavLink></li>
-      <li><NavLink className="font-bold text-slate-500" to="/about">About</NavLink></li>
+      <li><NavLink className="font-bold" to="/about">About</NavLink></li>
     </>
   )
 
@@ -40,12 +40,13 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end  py-5">
+        <input type="checkbox" value="light" className="toggle theme-controller mr-5"/>
           {
             user?.email ? <div className="dropdown dropdown-end">
               <label tabIndex={0} className=" btn  btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <img src={user.photoURL} alt={user.displayName} />
-                 
+
                 </div>
                 <h1 className="">{user.displayName}</h1>
               </label>
@@ -54,7 +55,7 @@ const Navbar = () => {
                   <button className="btn btn-sm normal-case btn-ghost">{user.email}</button>
                 </li>
                 <li>
-                  <button className="btn btn-sm  btn-ghost"
+                  <button className="btn btn-sm text-black btn-ghost"
                     onClick={logOut}
                   >Logout</button>
 
@@ -63,7 +64,7 @@ const Navbar = () => {
             </div>
               :
               <Link to='/login'>
-                <button className="btn btn-md themeColor btn-ghost">Login</button>
+                <button className="btn btn-md text-black themeColor btn-ghost">Login</button>
               </Link>
           }
         </div>

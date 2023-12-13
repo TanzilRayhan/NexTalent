@@ -81,7 +81,7 @@ const AddJob = () => {
                     type="email"
                     name="email"
                     placeholder="Enter email"
-                    className="input input-bordered text-slate-600"
+                    className="input input-bordered "
                     defaultValue={user?.email}
                     required
                     readOnly
@@ -97,25 +97,27 @@ const AddJob = () => {
                     type="text"
                     name="jobTitle"
                     placeholder="Enter Job Title"
-                    className="input input-bordered text-slate-600"
+                    className="input input-bordered "
                     required
                   />
                 </div>
               </div>
               <div className="lg:flex gap-5">
-                <div className="form-control">
+                <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text text-xl font-bold text-white">
                       Category
                     </span>
                   </label>
-                  <input
-                    type="text"
+                  <select  type="text"
                     name="category"
                     placeholder="Enter Category"
-                    className="input input-bordered text-slate-600"
-                    required
-                  />
+                    className="input input-bordered text-center"
+                    required>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Graphic Design">Graphic Design</option>
+                  </select>
                 </div>
                 <div className="form-control w-full">
                   <label className="label">
@@ -127,7 +129,7 @@ const AddJob = () => {
                     type="date"
                     name="deadline"
                     placeholder="Enter Deadline"
-                    className="input input-bordered text-slate-600"
+                    className="input input-bordered"
                     required
                   />
                 </div>
@@ -143,7 +145,7 @@ const AddJob = () => {
                     type="number"
                     name="minPrice"
                     placeholder="Enter Minimum Price"
-                    className="input input-bordered text-slate-600"
+                    className="input input-bordered"
                     required
                   />
                 </div>
@@ -157,7 +159,7 @@ const AddJob = () => {
                     type="number"
                     name="maxPrice"
                     placeholder="Enter Maximum Price"
-                    className="input input-bordered text-slate-600"
+                    className="input input-bordered "
                     required
                   />
                 </div>
@@ -173,22 +175,15 @@ const AddJob = () => {
                   type="text"
                   name="description"
                   placeholder="Enter job description"
-                  className="input input-bordered w-full h-16 text-slate-600"
+                  className="input input-bordered w-full h-16 "
                   required
                   autoComplete="off"
                 />
-                <label className="label">
-                  <a
-                    href="#"
-                    className="label-text-alt link link-hover font-bold text-white pt-2"
-                  >
-                    Forgot password?
-                  </a>
-                </label>
+             
               </div>
 
-              <div className="form-control mt-3">
-                <button className="btn btn-primary bg-[#0a183b]">
+              <div className="form-control mt-5">
+                <button className="btn btn-primary text-white bg-[#0a183b]">
                   Add Job
                 </button>
               </div>

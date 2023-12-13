@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBgBujDQlomUTn-Ht6qU_utnZ3TrNY3cL8",
-  authDomain: "nextalent-22762.firebaseapp.com",
-  projectId: "nextalent-22762",
-  storageBucket: "nextalent-22762.appspot.com",
-  messagingSenderId: "586980938968",
-  appId: "1:586980938968:web:2a7e9d6dfc87f1b37333ad"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

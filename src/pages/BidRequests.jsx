@@ -78,9 +78,9 @@ const BidRequests = () => {
             <Helmet>
                 <title>My Bids | NexTalent</title>
             </Helmet>
-            <div className="max-w-4xl mx-auto mb-10">
-                <h1 className="text-2xl lg:text-5xl font-extrabold text-slate-500 text-center py-5">Total Bid Requests: {bids.length}</h1>
-                <h1 className="text-2xl lg:text-3xl font-extrabold text-slate-500 text-center pb-5">Email: {user.email}</h1>
+            <div className="max-w-4xl max-h-screen mx-auto mb-10">
+                <h1 className="text-2xl lg:text-5xl font-extrabold text-center py-5">Total Bid Requests: {bids.length}</h1>
+                <h1 className="text-2xl lg:text-3xl font-extrabold text-center pb-5">Email: {user.email}</h1>
                 <div className="overflow-x-auto">
                     <table className="table w-full">
                         <tbody>

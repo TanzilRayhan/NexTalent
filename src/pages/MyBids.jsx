@@ -57,12 +57,12 @@ const MyBids = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({status: 'complete'})
+            body: JSON.stringify({ status: 'complete' })
         })
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                if(data.modifiedCount > 0){
+                if (data.modifiedCount > 0) {
                     //update
                     const remaining = bids.filter(bid => bid._id !== id);
                     const updated = bids.find(bid => bid._id === id);
@@ -71,7 +71,7 @@ const MyBids = () => {
                     setBids(newBids);
                 }
             })
-            
+
     }
 
     return (
@@ -80,8 +80,8 @@ const MyBids = () => {
                 <title>My Bids | NexTalent</title>
             </Helmet>
             <div className="max-w-4xl mx-auto mb-10">
-                <h1 className="text-2xl lg:text-5xl font-extrabold text-slate-500 text-center py-5">My bids: {bids.length}</h1>
-                <h1 className="text-2xl lg:text-3xl font-extrabold text-slate-500 text-center pb-5">Email: {user.email}</h1>
+                <h1 className="text-2xl lg:text-5xl font-extrabold text-center py-5">My bids: {bids.length}</h1>
+                <h1 className="text-2xl lg:text-3xl font-extrabold  text-center pb-5">Email: {user.email}</h1>
                 <div className="overflow-x-auto">
                     <table className="table w-full">
                         <tbody>

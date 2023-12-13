@@ -98,8 +98,8 @@ const Register = () => {
               <p className="text-red-500 font-bold">{error}</p>
               </div>
               </div>
-              <div className="form-control mt-6">
-                <button className="btn btn-primary bg-[#0a183b]">Register</button>
+              <div className="form-control">
+                <button className="btn btn-primary  text-white  bg-[#0a183b]">Register</button>
               </div>
               <p className="text-white">
               Already Have an Account? Please{" "}

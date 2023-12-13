@@ -63,7 +63,7 @@ const JobDetails = () => {
       <div className="card flex flex-col bg-slate-200 shadow-xl">
         <div className="flex flex-col text-center p-10 ">
           <div>
-            <h2 className="card-title  justify-center items-center text-3xl font-bold">
+            <h2 className="card-title text-black justify-center items-center text-3xl font-bold">
               {jobTitle}
             </h2>
             <div className="flex flex-col lg:flex-row justify-center items-center pt-2 gap-2">
@@ -81,10 +81,10 @@ const JobDetails = () => {
               </div>
             </div>
 
-            <p className="font-semibold text-lg">{description}</p>
+            <p className="font-semibold text-black text-lg">{description}</p>
           </div>
           <div className="text-center py-5">
-            <h1 className="text-2xl lg:text-5xl py-3 font-bold">
+            <h1 className="text-2xl lg:text-5xl py-3 text-black font-bold">
               Place your bid
             </h1>
           </div>
@@ -101,7 +101,7 @@ const JobDetails = () => {
                     type="email"
                     name="bidder_email"
                     placeholder="Enter email"
-                    className="input input-bordered text-slate-600"
+                    className="input input-bordered"
                     defaultValue={user?.email}
                     required
                     readOnly
@@ -117,7 +117,7 @@ const JobDetails = () => {
                     type="email"
                     name="email"
                     placeholder="Enter email"
-                    className="input input-bordered text-slate-600"
+                    className="input input-bordered"
                     required
                     defaultValue={email}
                     readOnly
@@ -135,7 +135,7 @@ const JobDetails = () => {
                     type="number"
                     name="price"
                     placeholder="Enter Bidding Amount"
-                    className="input input-bordered text-slate-600"
+                    className="input input-bordered"
                     autoComplete="off"
                     required
                   />
@@ -150,14 +150,14 @@ const JobDetails = () => {
                     type="date"
                     name="deadline"
                     placeholder="Enter Deadline"
-                    className="input input-bordered text-slate-600"
+                    className="input input-bordered "
                     required
                   />
                 </div>
               </div>
               <div className="form-control mt-10">
                 <button
-                  className="btn btn-primary bg-[#0a183b]"
+                  className="btn btn-primary text-white bg-[#0a183b]"
                   disabled={isBidDisabled}
                 >
                   Bid on the project
