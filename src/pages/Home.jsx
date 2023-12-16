@@ -40,11 +40,11 @@ const Home = () => {
             <Banner></Banner>
             <h1 className="text-center mt-10 py-5 text-3xl lg:text-5xl font-bold">Browse By Category</h1>
             <Tabs >
-                <TabList className="flex text-black pt-2 justify-center items-center themeColor">
+                <TabList className="flex text-black px-2 pt-2 justify-center items-center themeColor">
                     <Tab onClick={() => filterJobsByCategory("")}>All Jobs</Tab>
-                    <Tab onClick={() => filterJobsByCategory("Web Development")}>Web Development</Tab>
                     <Tab onClick={() => filterJobsByCategory("Digital Marketing")}>Digital Marketing</Tab>
                     <Tab onClick={() => filterJobsByCategory("Graphic Design")}>Graphic Design</Tab>
+                    <Tab onClick={() => filterJobsByCategory("Web Development")}>Web Development</Tab>
                 </TabList>
                 <div className="max-w-7xl py-10 mx-auto">
                     <TabPanel>

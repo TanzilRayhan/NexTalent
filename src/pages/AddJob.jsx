@@ -87,7 +87,7 @@ const AddJob = () => {
                     readOnly
                   />
                 </div>
-                <div className="form-control">
+                <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text text-xl font-bold text-white">
                       Job Title
@@ -135,7 +135,7 @@ const AddJob = () => {
                 </div>
               </div>
               <div className="lg:flex gap-5">
-                <div className="form-control">
+                <div className="form-control  w-full">
                   <label className="label">
                     <span className="label-text text-xl font-bold text-white">
                       Minimum Price
@@ -149,7 +149,7 @@ const AddJob = () => {
                     required
                   />
                 </div>
-                <div className="form-control">
+                <div className="form-control  w-full">
                   <label className="label">
                     <span className="label-text text-xl font-bold text-white">
                       Maximum Price
@@ -165,7 +165,7 @@ const AddJob = () => {
                 </div>
               </div>
 
-              <div className="form-control">
+              <div className="form-control  w-full">
                 <label className="label">
                   <span className="label-text text-xl font-bold text-white">
                     Description
